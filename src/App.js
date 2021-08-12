@@ -5,16 +5,14 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Navbar from './components/navbar';
+import Navbar from './components/common/navbar';
 import { Fragment } from 'react';
 
 function App() {
   return (
     <Fragment>
-
-      <Navbar />
-      
       <Router>
+        <Navbar />
           <Switch>
 
             <Route path="/bankList">

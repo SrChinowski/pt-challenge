@@ -4,12 +4,12 @@ import {
     AppBar, 
     Toolbar,
     IconButton,
-    Typography,
-    Button
+    Typography
 } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -23,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         flexGrow: 1,
+        color: "white",
+        textDecoration: "none"
     }
   }));
 
@@ -35,9 +37,11 @@ const Navbar = () => {
     return ( 
         <div className={classes.root}>
             <AppBar position="static" className={classes.appBar}>
-
                 <Toolbar>
-                    <Typography variant="h6" className={classes.title}>
+                    <Typography 
+                        variant="h6" className={classes.title}
+                        component={Link} to="/"
+                    >
                         Carlos Leon
                     </Typography>
 

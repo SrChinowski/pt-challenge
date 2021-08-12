@@ -24,9 +24,8 @@ const BankList = () => {
     const dispatch = useDispatch();
 
     useEffect( () => {
-        const loadItems = () => dispatch(getBankList());
-        loadItems();
-    }, [])
+        dispatch(getBankList());
+    }, []) // eslint-disable-line
 
     const { banks } = useSelector(state => state.BankList)
 

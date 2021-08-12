@@ -6,12 +6,14 @@ import {
   Route
 } from "react-router-dom";
 import Navbar from './components/common/navbar';
-import { Fragment } from 'react';
+
+import { Provider } from 'react-redux';
+import store from './store';
 
 function App() {
   return (
-    <Fragment>
-      <Router>
+    <Router>
+      <Provider store={store}>
         <Navbar />
           <Switch>
 
@@ -24,9 +26,8 @@ function App() {
             </Route>
 
           </Switch>
-      </Router>
-      
-    </Fragment>
+      </Provider>
+    </Router>
   );
 }
 

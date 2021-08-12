@@ -29,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     subtitle: {
-        color: "gray"
+        color: "gray",
+        marginBottom: "1rem"
     }
 
   }));
@@ -60,7 +61,7 @@ const Landing = () => {
                     direction="column"
 
                 >
-                    <Typography variant="h3" gutterBottom className={classes.title}> React Engineer Practical Test </Typography>
+                    <Typography variant="h4" gutterBottom className={classes.title}> React Engineer Practical Test </Typography>
                     <Typography variant="h5" gutterBottom className={classes.subtitle}> a Challenge for Paga Todo </Typography>
 
                     <Button variant="contained" color="primary" component={Link} to="/bankList">Bank List</Button>

@@ -11,6 +11,7 @@ import { getBankList } from '../redux/actions/bankList'
 
 import { makeStyles } from '@material-ui/core/styles';
 import BankItem from '../components/bankList/bankItem';
+import Alert from '@material-ui/lab/Alert';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -55,7 +56,7 @@ const BankList = () => {
             {/* Content */}
             {
                 banks.length === 0 ?
-                "No hay nadap" 
+                <Alert severity="info">No hay informacion para mostrar.</Alert>
                 : 
                 banks.map(bank => (
                     <BankItem bank={bank}/>

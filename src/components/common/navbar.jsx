@@ -3,12 +3,10 @@ import React from 'react'
 import { 
     AppBar, 
     Toolbar,
-    IconButton,
     Typography
 } from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 
 
@@ -45,9 +43,6 @@ const Navbar = () => {
                         Carlos Leon
                     </Typography>
 
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <MenuIcon />
-                    </IconButton>
                 </Toolbar>
 
             </AppBar>

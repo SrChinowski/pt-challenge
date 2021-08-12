@@ -3,13 +3,15 @@ import React from 'react'
 import { Grid, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 
 const useStyles = makeStyles((theme) => ({
-    card: {
-        
+    subtitle: {
+        color: "rgba(0, 0, 0, 0.54)",
+        fontSize: "1rem"
     },
-    img: {
-        maxWidth: '100%'
+    icon: {
+        fontSize: '5rem'
     }
 }));
 
@@ -19,27 +21,36 @@ const BankItem = ({bank}) => {
 
     return ( 
         <Grid item  xs={12} sm={12} md={6} lg={6} xl={6}>
-        <Paper className={classes.card}>
+            <Paper className={classes.card}>
 
-            <Grid container spacing={3}>
+                <Grid 
+                    container spacing={3}
+                    justifyContent="center" alignContent="center"
+                >
 
-                <Grid item xs={4} sm={4} md={4} lg={4} xl={4}>
-                    <img src='https://www.qbrobotics.com/wp-content/uploads/2018/03/sample-logo.png' 
-                    alt="Carlos Leon - pt-Challenge" className={classes.img} />
+                    <Grid item container justifyContent="center" alignContent="center" xs={4} sm={4} md={4} lg={4} xl={4}>
+                        <AccountBalanceIcon className={classes.icon}/>
+                    </Grid>
+
+                    <Grid item xs={8} sm={8} md={8} lg={8} xl={8}>
+
+                        <Typography variant="h6" color="primary" >
+                            <a href={bank.url} target="_blank" rel="noreferrer" style={{textDecoration: "none"}}>
+                                {bank.bankName}
+                            </a>
+                        </Typography>
+
+                        <Typography className={classes.subtitle}>{bank.description}</Typography>
+                        <Typography className={classes.subtitle}>{bank.age} años</Typography>
+                        {/* <Typography className={classes.subtitle}>{bank.url}</Typography> */}
+
+                    </Grid>
+
                 </Grid>
-
-                <Grid item xs={8} sm={8} md={8} lg={8} xl={8}>
-                    <Typography>{bank.bankName}</Typography>
-                    <Typography>{bank.description}</Typography>
-                    <Typography>Antiguedad: {bank.age}</Typography>
-                    <Typography>{bank.url}</Typography>
-                </Grid>
-
-            </Grid>
-        </Paper>
+            </Paper>
         </Grid>
         
-     );
+    );
 }
  
 export default BankItem;

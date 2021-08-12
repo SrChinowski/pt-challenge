@@ -5,6 +5,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 
+import PropTypes  from 'prop-types';
+
 const useStyles = makeStyles((theme) => ({
     subtitle: {
         color: "rgba(0, 0, 0, 0.54)",
@@ -51,6 +53,10 @@ const BankItem = ({bank}) => {
         </Grid>
         
     );
+}
+
+BankItem.propTypes = {
+    bank: PropTypes.object.isRequired
 }
  
 export default BankItem;

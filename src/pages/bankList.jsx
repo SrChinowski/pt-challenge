@@ -5,6 +5,10 @@ import {
     Typography,
     Divider
 } from '@material-ui/core';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { getBankList } from '../redux/actions/bankList'
+
 import { makeStyles } from '@material-ui/core/styles';
 import BankItem from '../components/bankList/bankItem';
 
@@ -17,6 +21,14 @@ const useStyles = makeStyles((theme) => ({
 const BankList = () => {
 
     const classes = useStyles();
+    const dispatch = useDispatch();
+
+    useEffect( () => {
+        const loadItems = () => dispatch(getBankList());
+        loadItems();
+    }, [])
+
+    const { banks } = useSelector(state => state.BankList)
 
     return ( 
     <div className={classes.root}>
@@ -42,8 +54,15 @@ const BankList = () => {
 
 
             {/* Content */}
-            <BankItem></BankItem>
-            <BankItem></BankItem>
+            {
+                banks.length === 0 ?
+                "No hay nadap" 
+                : 
+                banks.map(bank => (
+                    <BankItem bank={bank}/>
+                ))
+                
+            }
         
         </Grid>
 

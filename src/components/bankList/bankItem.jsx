@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const BankItem = () => {
+const BankItem = ({bank}) => {
 
     const classes = useStyles();
 
@@ -29,9 +29,10 @@ const BankItem = () => {
                 </Grid>
 
                 <Grid item xs={8} sm={8} md={8} lg={8} xl={8}>
-                    <Typography>Nombre</Typography>
-                    <Typography>Desc</Typography>
-                    <Typography>Antiguedad: 10</Typography>
+                    <Typography>{bank.bankName}</Typography>
+                    <Typography>{bank.description}</Typography>
+                    <Typography>Antiguedad: {bank.age}</Typography>
+                    <Typography>{bank.url}</Typography>
                 </Grid>
 
             </Grid>
